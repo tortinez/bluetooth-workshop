@@ -3,7 +3,7 @@ Pràctica de Micros - Bluetooth
 
 Applicació per comunicar amb el micro per Bluetooth.
 
-Com instal·lar
+ Com instal·lar
 ----------
 
 1. Copiar l'arxiu .apk al dispositiu Android.
@@ -24,3 +24,5 @@ Funcionament
 4. Emparellar el mòdul (fent servir la contrassenya 1234 si la demana).
 
 5. Obrir l'aplicació Android de la pràctica.
+
+Aplicació basada en la feina feta per @EnricSala al repositori https://github.com/EnricSala/android-practica-bluetooth
