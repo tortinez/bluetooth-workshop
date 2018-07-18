@@ -58,7 +58,7 @@ public class BytesFragment extends Fragment {
 
         // Build indicators
         indicators = view.findViewById(R.id.linearBytesDisplay);
-        lengthIndicatorsText = view.findViewById(R.id.indicatorsLenthText);
+        lengthIndicatorsText = view.findViewById(R.id.indicatorsLengthText);
         lengthIndicatorsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +69,7 @@ public class BytesFragment extends Fragment {
 
         // Build controls
         controls = view.findViewById(R.id.linearBytesControl);
-        lengthControlsText = view.findViewById(R.id.controlsLenthText);
+        lengthControlsText = view.findViewById(R.id.controlsLengthText);
         lengthControlsText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,7 +140,7 @@ public class BytesFragment extends Fragment {
             choices[i - BytesCommand.MIN_LENGTH] = Integer.toString(i);
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Tria el numero de bytes").setItems(choices, new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.bytes_dialogTitle).setItems(choices, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 lengthIndicators = which + BytesCommand.MIN_LENGTH;
                 buildIndicators();
@@ -156,7 +156,7 @@ public class BytesFragment extends Fragment {
             choices[i - BytesCommand.MIN_LENGTH] = Integer.toString(i);
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Tria el numero de bytes").setItems(choices, new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.bytes_dialogTitle).setItems(choices, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 lengthControls = which + BytesCommand.MIN_LENGTH;
                 buildControls();

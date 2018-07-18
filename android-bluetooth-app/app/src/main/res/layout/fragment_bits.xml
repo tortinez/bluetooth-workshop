@@ -13,7 +13,7 @@
         android:layout_above="@+id/linearLayout1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:text="Treballant amb bits"
+        android:text="@string/bits_title"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <LinearLayout
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="4dp"
-                android:text="Indicadors"
+                android:text="@string/all_indicators"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <LinearLayout
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="4dp"
-                android:text="Controls"
+                android:text="@string/all_controls"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <LinearLayout
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:text="Envia" />
+                android:text="@string/all_send"/>
         </LinearLayout>
     </LinearLayout>
 

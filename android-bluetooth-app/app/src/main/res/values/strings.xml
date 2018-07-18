@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Practica Bluetooth</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Comunicación Bluetooth</string>
+    <string name="action_settings">Ajustes</string>
+
+    <string name="bits_title">Trabajando con Bits</string>
+    <string name="all_indicators">Indicadores</string>
+    <string name="all_controls">Controles</string>
+    <string name="all_send">Envia</string>
+    <string name="bytes_title">Trabajando con Bytes</string>
+    <string name="bytes_autochecksum">Auto checksum</string>
+    <string name="bytes_dialogTitle">Escoge el número de bytes:</string>
+
+    <string name="main_enableBluetooth">¡La App no funciona sin Bluetooth!</string>
+    <string name="main_noBluetooth">¡Este dispositivo no tiene Bluetooth!</string>
+    <string name="main_bluetoothSearch">Buscando módulo Bluetooth...</string>
+    <string name="main_bluetoothPair">¡Es necesario emparejar el dispositivo Android con el módulo Bluetooth!</string>
+    <string name="main_connecting">Conectando...</string>
+    <string name="main_intent">Intento</string>
+    <string name="main_connected">¡Bluetooth connectado!</string>
+    <string name="main_sendError">Error enviando comanda:</string>
 </resources>

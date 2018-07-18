@@ -154,8 +154,8 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK) {
                 intentaConnectarAmbLaPlaca();
             } else {
-                Toast.makeText(this, "La App no funciona sense Bluetooth!", Toast.LENGTH_LONG).show();
-                finish(); // Engega Bluetooth o tenca app
+                Toast.makeText(this, R.string.main_enableBluetooth, Toast.LENGTH_LONG).show();
+                finish(); // Engega Bluetooth o tanca app
             }
         }
     }
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity
     private void intentaConnectarAmbLaPlaca() {
         // Comprova si aquest terminal te Bluetooth
         if (bluetoothAdapter == null) {
-            String missatgeError = "Aquest dispositiu no te Bluetooth!";
+            String missatgeError = getString(R.string.main_noBluetooth);
             Log.e(TAG, missatgeError);
             Toast.makeText(this, missatgeError, Toast.LENGTH_LONG).show();
             finish(); // tanca app
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity
                 Log.d(TAG, "El Bluetooth esta habilitat!");
                 progressDialog = new ProgressDialog(this);
                 progressDialog.setTitle("Bluetooth");
-                progressDialog.setMessage("Buscant modul Bluetooth...");
+                progressDialog.setMessage(getString(R.string.main_bluetoothSearch));
                 progressDialog.setCancelable(false);
                 progressDialog.setIndeterminate(true);
                 progressDialog.show();
@@ -222,16 +222,16 @@ public class MainActivity extends AppCompatActivity
     public void handleBluetoothEvent(Message msg) {
         switch (msg.what) {
             case ConnectionManager.ACTION_SEARCHING_DEVICE:
-                progressDialog.setMessage("Buscant el modul Bluetooth...");
+                progressDialog.setMessage(getString(R.string.main_bluetoothSearch));
                 break;
             case ConnectionManager.ACTION_SEARCHING_FAILED:
-                Log.e(TAG, "Cal emparellar aquest dispositiu Android amb el modul Bluetooth!");
+                Log.e(TAG, getString(R.string.main_bluetoothPair));
                 progressDialog.dismiss();
                 showErrorDialog();
                 break;
             case ConnectionManager.ACTION_CONNECTING:
-                String str = "Connectant...";
-                progressDialog.setMessage((msg.arg1 > 1) ? str + String.format(" (intent %d)", msg.arg1) : str);
+                String str = getString(R.string.main_connecting);
+                progressDialog.setMessage((msg.arg1 > 1) ? str + " (" + getString(R.string.main_intent) + String.format(" %d)", msg.arg1) : str);
                 break;
             case ConnectionManager.ACTION_CONNECTED:
                 progressDialog.dismiss();
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity
 
     private void showSuccessDialog() {
         alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Bluetooth connectat!");
+        alertDialog.setTitle(getString(R.string.main_connected));
         alertDialog.setCancelable(false);
         alertDialog.setIcon(tickDrawable);
         alertDialog.show();
@@ -271,7 +271,7 @@ public class MainActivity extends AppCompatActivity
         alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setTitle("Error Bluetooth");
         alertDialog.setCancelable(false);
-        alertDialog.setMessage("Cal emparellar aquest dispositiu Android amb el modul Bluetooth!");
+        alertDialog.setMessage(getString(R.string.main_bluetoothPair));
         alertDialog.setIcon(errorDrawable);
         alertDialog.show();
         new Thread() {
@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity
             connectionManager.sendCommand(command);
         } catch (Exception e) {
             Log.e(TAG, "Error enviant comanda: " + e);
-            Toast.makeText(this, "Error enviant comanda: " + command, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.main_sendError) + command, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity
             connectionManager.sendCommand(command);
         } catch (Exception e) {
             Log.e(TAG, "Error enviant comanda: " + e);
-            Toast.makeText(this, "Error enviant comanda: " + command, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.main_sendError) + command, Toast.LENGTH_SHORT).show();
         }
     }
 
